@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>尺子</title>
+    <style>
+      ul{
+          list-style: none;
+      }
+        li{
+            width: 2px;
+            height: 6px;
+            background-color: black;
+            float: left;
+            display: inline-block;
+            margin-right: 10px;
+        }
+      ul li:nth-child(5n+1){
+          width: 4px;
+          height: 12px;
+
+      }
+        ul li:nth-child(10n+1){
+            width: 4px;
+            height: 18px;
+        }
+      ul li:nth-child(10n+10){
+          counter-increment: num;
+      }
+
+      ul li:nth-child(10n+1):before{
+          content: counter(num) '0';
+          display: block;
+          margin: 18px 0 0 -3px;
+      }
+        ul li:first-child:before{
+            content: '0';
+            /*display: block;
+            margin: 18px 0 0 -3px;*/
+        }
+    </style>
+</head>
+<body>
+  <ul id="ruler">
+
+  </ul>
+</body>
+<script type="text/javascript">
+    var ruler = document.querySelector('#ruler');
+    var counter = 101;
+    for(i=0;i<counter;i++){
+      ruler.innerHTML += '<li></li>';
+    }
+</script>
+</html>

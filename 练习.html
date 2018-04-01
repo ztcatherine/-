@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+     html,body{
+       margin: 0;
+       padding: 0;
+     }
+     .element{
+       width: 100px;
+       height: 100px;
+       background-color: red;
+     }
+  </style>
+</head>
+<body>
+
+
+<div class="element">1234</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.5.0/velocity.min.js">
+
+</script>
+</body>
+<script type="text/javascript">
+  $('.element').velocity({
+    backgroundColor: "#f0f0f0"
+  },{ duration: 3000}).velocity({ backgroundColor: "#3291f1" },{ duration: 3000});
+
+/*  (function (window) {
+    var str = 'world';
+    function sayHello() {
+      alert('hello'+str);
+    }
+    function saybye() {
+      alert('再见'+str);
+    }
+    window.tools = {
+      sayHello : sayHello,
+      saybye : saybye
+    };
+
+  })(window);
+    tools.sayHello();
+    tools.saybye();*/
+
+</script>
+</html>

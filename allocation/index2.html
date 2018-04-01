@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+  <title>订单确认</title>
+  <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    html,body{
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+    }
+    #header{
+      height: 120px;
+      padding: 5px;
+      border: 1px solid silver;
+    }
+    #headerT{
+      height: 60px;
+      border-bottom: 1px solid silver;
+    }
+    #headerT a{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      font-weight: bold;
+      text-decoration: none;
+      color: #414141;
+    }
+    .headerTL{
+      width: 100%;
+      height: 20px;
+    }
+    .headerTC{
+      width: 50%;
+      height: 20px;
+    }
+    #headerT i{
+      width: 10px;
+      height: 18px;
+      background: url('png/om_left.png') no-repeat;
+      background-size: 100% auto;
+    }
+    #headerB{
+      height: 50px;
+      line-height: 50px;
+      display: flex;
+    }
+    .dropdown{
+      width: 90px;
+    }
+    #headerBR{
+      color: silver;
+    }
+    .oc_label{
+      width: 74px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      margin: 15px 10px 0;
+      border: 1px solid silver;
+      color: silver;
+    }
+    #content{
+      height: 200px;
+      border: 1px solid silver;
+      padding: 10px 8px;
+    }
+    .contentT{
+      height: 80px;
+      display: flex;
+      border-bottom: 1px solid silver;
+
+    }
+    #oc_food{
+      width: 75px;
+      height: 68px;
+      background: url("png/1.png") no-repeat;
+      background-size: 100% auto;
+      margin-right: 10px;
+    }
+    .contentT span{
+      line-height: 69px;
+    }
+    .contentT #oc_foodNum{
+      margin: 0 20px 0 80px;
+    }
+    .contentB{
+      height: 100px;
+      padding-top: 20px;
+      color: silver;
+    }
+    #contentTxt{
+      height: 40px;
+      width: 100%;
+      border: 1px solid silver;
+    }
+    #bottom{
+      height: 80px;
+      border: 1px solid silver;
+      padding: 0 10px;
+    }
+    .bottomTB{
+      height: 35px;
+      line-height: 35px;
+    }
+    .bottomT{
+      border-bottom: 1px dashed #c8c8c8;
+    }
+    .bottomItems{
+      display: inline-block;
+      width: 49%;
+    }
+    .bottomL{
+      text-align: left;
+    }
+    .bottomR{
+      text-align: right;
+    }
+    .btn{
+      position: fixed;
+      bottom: 0;
+      width: 95%;
+    }
+  </style>
+</head>
+<body>
+<div id="header">
+  <div id="headerT">
+    <a href="#">
+      <p class="headerTL">张三 &nbsp;&nbsp;&nbsp;&nbsp;13111111111</p>
+      <p class="headerTC">平西府尚硅谷it教育</p>
+      <i></i>
+    </a>
+  </div>
+  <div id="headerB">
+    <span>送餐时间：</span>
+    <div class="dropdown">
+      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        未选择
+        <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+        <li><a href="#">未选择</a></li>
+        <li><a href="#">立即送达</a></li>
+      </ul>
+    </div>
+    <span id="headerBR">预计一小时后送达</span>
+  </div>
+</div>
+<div class="oc_label">订单明细</div>
+<div id="content">
+  <div class="contentT">
+    <div id="oc_food" ></div>
+    <span>熏鸡肉沙拉</span>
+    <span id="oc_foodNum">x1</span>
+    <span>23元</span>
+  </div>
+  <div class="contentB">
+    <p>备注</p>
+    <textarea id="contentTxt"></textarea>
+  </div>
+</div>
+<div class="oc_label">费用小记</div>
+<div id="bottom">
+  <div class="bottomT bottomTB">
+    <span class="bottomItems bottomL">配送费用</span>
+    <span class=" bottomItems bottomR">￥0</span>
+  </div>
+  <div class="bottomTB">
+    <span class="bottomItems bottomL">费用合计</span>
+    <span class=" bottomItems bottomR">￥23</span>
+  </div>
+</div>
+<button type="button" class="btn btn-success btn-lg btn-block">微信支付</button>
+
+<script src="Bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="Bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

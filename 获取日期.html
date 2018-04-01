@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>动态时钟</title>
+</head>
+<style>
+  body {
+    height: 1000px;
+    width: 100%;
+  }
+  #show {
+    margin-top: 100px;
+    margin-left: 300px;
+  }
+</style>
+<body>
+  <input type="text" id="show">
+  <button id="stop">停止</button>
+</body>
+<script>
+ /* var d = new Date();
+  var Y = d.getFullYear();
+  var M = d.getMonth();
+  var D = d.getDate();
+  console.log(Y + '年' + M + '月' + D + '日')*/
+  var t;
+  var show = document.getElementById('show');
+  function fn() {
+    var time = new Date().toLocaleTimeString();
+    show.value = time;
+    t = setTimeout(fn,1000)
+  }
+  fn();
+  var stop = document.getElementById('stop');
+  stop.onclick = function () {
+    clearTimeout(t)
+  }
+</script>
+</html>

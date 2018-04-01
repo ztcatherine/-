@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+  <title></title>
+</head>
+<link rel="stylesheet" href="css/index.css">
+<body>
+  <div id="wrap">
+    <!--头部-->
+    <div id="header">
+      <div id="headerTop">
+        <!--logo-->
+        <h1 id="logo">
+          <a href="#">
+            <img src="img/logo.png" >
+          </a>
+        </h1>
+        <!--雪碧图-->
+        <a href="#" id="menuBtn" class="menuBtnClos"></a>
+        <div id="nav">
+          <a href="#" id="searchBtn">搜索</a>
+          <a href="#">登录</a>
+          <a href="#">注册</a>
+        </div>
+      </div>
+      <form id="search">
+        <input type="text" placeholder="请输入内容..."/>
+        <input type="submit" value="搜索"/>
+      </form>
+      <!--遮罩层-->
+      <ul id="list">
+        <li>
+          <a href="#">首页</a>
+        </li>
+        <li>
+          <a href="#">MV</a>
+        </li>
+        <li>
+          <a href="#">悦单</a>
+        </li>
+        <li>
+          <a href="#">V榜</a>
+        </li>
+        <li>
+          <a href="#">音悦</a>
+        </li>
+        <li>
+          <a href="#">商城</a>
+        </li>
+        <li>
+          <a href="#">节目</a>
+        </li>
+        <li>
+          <a href="#">饭团</a>
+        </li>
+        <li>
+          <a href="#">资讯</a>
+        </li>
+        <li>
+          <a href="#">我的家</a>
+        </li>
+        <li>
+          <a href="#">APP下载</a>
+        </li>
+        <li>
+          <a href="#">热门应用</a>
+        </li>
+      </ul>
+    </div>
+    <div id="content">
+      <div id="navs">
+        <ul id="navsList">
+          <li class="active">
+            <a href="#">首页</a>
+          </li>
+          <li>
+            <a href="#">MV</a>
+          </li>
+          <li>
+            <a href="#">悦单</a>
+          </li>
+          <li>
+            <a href="#">V榜</a>
+          </li>
+          <li>
+            <a href="#">音悦</a>
+          </li>
+          <li>
+            <a href="#">商城</a>
+          </li>
+          <li>
+            <a href="#">节目</a>
+          </li>
+          <li>
+            <a href="#">饭团</a>
+          </li>
+          <li>
+            <a href="#">资讯</a>
+          </li>
+          <li>
+            <a href="#">我的家</a>
+          </li>
+          <li>
+            <a href="#">APP下载</a>
+          </li>
+          <li>
+            <a href="#">热门应用</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript" src="transformCss.js"></script>
+<script type="text/javascript">
+  document.addEventListener('touchstart',function (event) {
+    event.preventDefault()
+  });
+  (function () {
+    var width = document.documentElement.clientWidth/16;
+    var styleN = document.createElement('style');
+    styleN.innerHTML = 'html{font-size: '+ width +'px !important;}';
+    document.head.appendChild(styleN);
+  })();
+  /*遮罩层切换*/
+  changeMenu();
+  function changeMenu() {
+    var menuBtn = document.getElementById('menuBtn');
+    var list = document.getElementById('list');
+    menuBtn.addEventListener('touchstart',function (event) {
+      if(menuBtn.className == 'menuBtnClos'){
+        menuBtn.className = 'menuBtnOpen';
+        list.style.display = 'block';
+      }else if(menuBtn.className == 'menuBtnOpen'){
+        menuBtn.className = 'menuBtnClos';
+        list.style.display = 'none';
+      }
+      event.stopPropagation();
+    })
+    document.addEventListener('touchstart',function () {
+      if(menuBtn.className == 'menuBtnOpen'){
+        menuBtn.className = 'menuBtnClos';
+        list.style.display = 'none';
+      }
+    })
+    list.addEventListener('touchstart',function (event) {
+      event.stopPropagation();
+    })
+  }
+</script>
+</html>

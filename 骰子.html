@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>绘画</title>
+  <style>
+     body{
+       text-align: center;
+     }
+    canvas{
+      border: 1px solid;
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="myCanvas"></canvas>
+
+</body>
+<script>
+  var myCanvasDom = document.querySelector('#myCanvas');
+  myCanvasDom.width = 1000;
+  myCanvasDom.height = 500;
+  var painting = myCanvasDom.getContext('2d');
+   /* 绘制线段
+   painting.beginPath();
+  painting.lineWidth = 10;
+  painting.moveTo(100,200);
+  painting.lineTo(100,100);
+  painting.lineTo(200,200);
+  painting.lineTo(300,100);
+  painting.lineTo(300,200);
+  painting.closePath();
+  painting.strokeStyle = 'blue';
+  painting.lineJoin = 'round';
+  painting.stroke();*/
+
+   /*
+      绘制圆形
+      参数1 参数2 圆心坐标
+      参数3 半径
+      参数4 起始的弧度
+      参数5 结束的弧度
+      参数6 绘制的方向(顺时针，逆时针) --可选值
+      弧度 = 角度/180 * 派 (Math.PI)
+  painting.arc(200,200,100,0,Math.PI*2);
+  painting.stroke();
+  */
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style>
+  body {
+    padding: 100px;
+  }
+</style>
+<body>
+  <button id="btn" class="btn btn-primary">事件监听器</button>
+</body>
+<script>
+  /*  TODO 事件监听表达式
+      TODO   * addEventListener(eventName,functionName,boolean) -其他浏览器
+      TODO   * element.attachEvent(eventName,functionName) - IE8之前的版本
+  * */
+  var btn = document.getElementById('btn');
+  function hero(elem,eventName,functionName) {
+     if (elem.addEventListener){
+       elem.addEventListener(eventName,functionName);
+     }else{
+       elem.attachEvent('on'+eventName,functionName);
+     }
+  }
+  hero(btn,'click',function () {
+    console.log('这是事件监听器实现的')
+  })
+
+
+
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+</body>
+<script>
+  // TODO 需要一些水果 - 苹果，西瓜，梨
+  // TODO 属性 - 姓名，颜色，味道
+  // TODO 苹果-重量； 西瓜-形状； 梨-大
+  function shuiguo(name,color,weidao) {
+    this.name = name;
+    this.color = color;
+    this.weidao =weidao;
+  }
+  function pingguo(name,color,weidao) {
+    shuiguo.call(this,name,color,weidao);
+    this.zhongliang = 1000
+  }
+  var a = new pingguo('苹果','红色','甜')
+  console.log(a.color)
+</script>
+</html>

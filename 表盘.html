@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .clock-wrapper{
+    width: 300px;
+    height: 300px;
+    background-color: ghostwhite;
+    margin: 80px auto;
+  }
+  .clock{
+    list-style: none;
+    transform: translateX(148px);
+  }
+  li{
+    width: 2px;
+    height: 6px;
+    background-color: black;
+    position: absolute;
+    transform-origin: 50% 150px;
+  }
+   li:nth-child(5n+1){
+     width: 4px;
+     height: 10px;
+   }
+  li:nth-child(5n+5){
+    counter-increment: num;
+    position: absolute;
+  }
+  li:nth-child(5n+5):before{
+    content: counter(num);
+    position: absolute;
+    left: 6px;
+    top: 13px;
+
+    transform: rotate(6deg);
+  }
+</style>
+<body>
+  <div class="clock-wrapper">
+    <ul class="clock"></ul>
+  </div>
+</body>
+<script type="text/javascript">
+  var clockDom = document.querySelector('.clock');
+  for(i=0;i<60;i++){
+    /*clockDom.innerHTML+='<li></li>';*/
+     var liDom = document.createElement('li');
+     clockDom.appendChild(liDom);
+     liDom.style.transform = 'rotate('+ 6*i+'deg)';
+  }
+</script>
+</html>

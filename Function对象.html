@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>创造构建函数</title>
+</head>
+<body>
+
+</body>
+<script>
+  /*TODO 创建构造函数
+    TODO  function 构造函数名(形参){
+    TODO     this.属性名 = 属性值;
+    TODO     this.方法名 = function(){
+    TODO       方法体
+    TODO     }
+    TODO  }
+    TODO  根据构造函数创建对象
+    TODO  var 对象名 = new 构造函数名()
+
+  * */
+    function Hero() {
+      this.name = 'zhangwuji';
+      this.sayMe = function () {
+        console.log('this is zhangwuji')
+      }
+    }
+    var hero = new Hero();
+</script>
+</html>

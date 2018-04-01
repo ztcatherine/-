@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <!--<script src="https://static.tianmaying.com/app/dm/js/lib.js"></script>-->
+  <script src="jquery-1.12.4.js"></script>
+</head>
+<style>
+  body {
+    background: url(./photo/冻品帮.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+</style>
+<body>
+
+
+</body>
+<script>
+  $(function() {
+    // 获取Body元素
+    var $danmu = $('body');
+    // 用以模拟弹幕内容的数组
+    var mock_msgs = ['每个人都应该学习编程，因为它教会你如何思考', '我上学期只上了两门课，创新工程实践和其他'];
+    // 用以模拟弹幕颜色的数组
+    var danmu_colors = ['red', 'green', 'blue', 'black', 'orange'];
+    // 随机获取一个数组中的元素
+    function random_from(arr){
+      var idx = Math.floor(Math.random()*arr.length);
+      return arr[idx];
+    }
+    // 从一个区间中选择一个数
+    function random_range(from, to) {
+      return Math.random() * (to - from) + from;
+    }
+    // 3.3 生成弹幕元素
+    function danmu_el(html) {
+      //生成弹幕的长度
+      var size = random_range(13, 50);
+      // 生成弹幕的高度
+      var top = random_range(20, window.innerHeight - 20 - size);
+      // 设置弹幕的样式
+      var style = [ "position:fixed",
+                    "left: 100%",
+                    "white-space: nowrap",
+                    'font-size:' + size + 'px',
+                    'top:' + top + 'px',
+                    'color:' + random_from(danmu_colors)
+                   ].join(';');
+      // 返回动态生成的弹幕
+      return $('<span style="' + style + '">').html(html);
+    }
+    // 3.4 插入弹幕
+    function insert_danmu(html){
+      // 生成弹幕元素
+      var $el = danmu_el(html);
+      // 将弹幕元素动态添加到Body中
+      $danmu.append($el);
+      // 设置弹幕的动画效果
+      $el.animate({
+        left: '-2560px'
+      }, 1000 * 10, "linear", function() {
+        $el.remove();
+      });
+    }
+    // 3.5 以3000毫秒为间隔(Interval)，不断插入弹幕
+    setInterval(function(){
+      insert_danmu(random_from(mock_msgs));
+    }, 2000);
+    // 3.6 websocket 实时弹幕
+    var socket = io('https://preview.tianmaying.com');
+    socket.on('message', function(html) {
+      console.log('message received:', html);
+      if(html){
+        // https://github.com/buddys/qq-wechat-emotion-parser
+        var parser = window.qqWechatEmotionParser;
+        if(parser) html = parser(html);
+        insert_danmu(html);
+      }
+    });
+  });
+</script>
+</html>

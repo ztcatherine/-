@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+
+  <title></title>
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+  }
+  html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  .wrap{
+    height: 100%;
+    width: 100%;
+  }
+  .content{
+    position: absolute;
+  }
+
+</style>
+<body>
+  <div class="wrap">
+     <div class="content">
+
+     </div>
+  </div>
+</body>
+<script type="text/javascript">
+  /*  手指触摸 touchstart
+      手指移动 touchend
+      手指抬起 touchmove
+  */
+  var wrap = document.querySelector('.wrap');
+  wrap.addEventListener('touchstart',function (event) {
+      event.preventDefault();
+  });
+  var content = document.querySelector('.content');
+  var text = '';
+  for(i=0;i<150;i++){
+    text+=i+'<br/>';
+  }
+  content.innerHTML = text;
+  //定义元素初始位置和手指初始位置
+  var eleY = 0;
+  var startY = 0;
+  wrap.addEventListener('touchstart',function (event) {
+       startY = event.changedTouches[0].clientY ;
+       eleY = content.offsetTop;
+  });
+  wrap.addEventListener('touchmove',function (event) {
+       var nowY = event.changedTouches[0].clientY;
+       var top = eleY + (nowY - startY);
+       if (top > 0){
+         top = 0;
+       }else if (top < wrap.clientHeight - content.offsetHeight){
+         top = wrap.clientHeight - content.offsetHeight
+       }
+       content.style.top = top + 'px';
+  });
+</script>
+</html>

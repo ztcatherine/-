@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style>
+  /* TODO 清除系统默认样式 */
+  *{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
+  /* TODO 设置页面高度 */
+  body{
+    height: 500px;
+  }
+  /* TODO 清除input点击后的蓝色边框 */
+  input{
+    outline:none;
+  }
+  /* TODO div设置样式 */
+  .head{
+    width: 100%;
+    height: 40px;
+    /*background-color: gray;*/
+    padding-left: 20px;
+    margin-left: 20px;
+    line-height: 40px;
+    border: solid 1px gray;
+  }
+  /* TODO 设置下外边距 */
+  .a1{
+    margin-bottom: 40px;
+  }
+  /* TODO 给选项那行设置div高度 */
+  #c1{
+    height: 80px;
+  }
+  /* TODO 设置内联元素的外边距 */
+  .b1,#b2{
+    margin-left: 100px;
+  }
+  .d1,#m1{
+    margin-left: 131px;
+  }
+  /* TODO 设置下划线 */
+  .w1{
+    border-bottom: solid 1px gray;
+  }
+  /* TODO 清除input边框 */
+  input{border: none;}
+  /* TODO 给添加微信抬头设置样式 */
+  #t1{
+    background-color: green;
+    margin-left: 20px ;
+    margin-top: 40px;
+    height: 40px;
+    width: 100px;
+    color: white;
+  }
+  /* TODO 给上传抬头设置样式 */
+  #t2{
+    display: block;
+    margin: 200px auto 10px;
+    width: 80%;
+    height: 50px;
+    background-color: skyblue;
+    color: white;
+  }
+
+</style>
+<body>
+  <div class="head a1">
+    名称
+    <input type="text"  placeholder="填写准确的抬头名称" class="d1">
+  </div>
+  <div id="c1" class="head w1">
+    <form>
+      <input type="radio"  name="hello"  value="male" checked >
+      单位
+      <input type="radio" name="hello" id="b2" value="female">
+      个人/政府机构
+    </form>
+    <div>
+      税号
+      <input type="text"   placeholder="输入纳税人识别号" id="m1">
+    </div>
+  </div>
+  <div class="head w1">
+    单位地址
+    <input type="text"  placeholder="收票单位注册地址" class="b1">
+  </div>
+  <div class="head w1">
+    电话号码
+    <input type="text"  placeholder="输入公司电话号码" class="b1">
+  </div>
+  <div class="head w1">
+    开户银行
+    <input type="text"  placeholder="收票单位开户银行" class="b1">
+  </div>
+  <div class="head w1" >
+    银行账号
+    <input type="text"  placeholder="收票单位银行账号" class="b1">
+  </div>
+  <input type="submit" value="添加微信抬头" id="t1">
+  <br>
+  <input type="submit" value="上传抬头" id="t2">
+
+</body>
+</html>

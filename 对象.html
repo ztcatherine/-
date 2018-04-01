@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+</body>
+<script>
+/*  // todo 对象1
+  var obj1 = {
+    name : 'zhangwuji',
+    age : 18,
+    sayMe : function () {
+      console.log('this is zhangwuji')
+    }
+  }
+  // todo 对象2
+  var obj2 = new Object();
+  obj2.name = 'zhangwuji';
+  obj2.sayMe = function () {
+    console.log('this is zhangwuji')
+  }
+  //todo 对象3
+  var obj3 = {
+    name : 'zhangwuji',
+    age : 18,
+    sayMe : function () {
+      console.log('this is zhangwuji')
+    }
+  }
+  var obj4 = Object.create(obj3)*/
+  //todo 调用对象的属性和方法
+  var obj = {
+    name : 'zhangwuji',
+    sayMe : function () {
+      console.log('this is zhangwuji')
+    }
+  }
+  //todo 调用属性
+  console.log(obj['name'])
+  //todo 调用方法
+  obj['sayMe']()
+  //todo 循环对象里面的内容
+  for (var hero in obj){
+    console.log(obj[hero]);
+  }
+  //todo 修改属性和方法
+  obj.name = 'zhoutong'
+  console.log(obj.name);
+  obj.sayMe = function () {
+    console.log('this is zhoutong')
+  }
+  obj['sayMe']();
+  // todo 新增属性和方法
+  obj.age = 18;
+  console.log(obj.age);
+
+  obj.hero = function () {
+  console.log('this is xiaowei')
+  }
+  obj['hero']();
+  //todo 删除属性和方法
+  delete obj.age;
+  console.log(obj.age);//属性不存在 - undefined
+  delete obj.hero;
+  obj['hero']();//方法不存在 - is not a function
+
+
+
+</script>
+</html>

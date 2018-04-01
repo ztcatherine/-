@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<style>
+  body {
+    padding: 100px;
+  }
+</style>
+<body>
+  <div id="carousel-example-generic" class="carousel slide" style="width: 492px;">
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="photo/1.jpg" alt="">
+      </div>
+    </div>
+    <a id="prev" class="left carousel-control" href="#">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a id="next" class="right carousel-control" href="#">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</body>
+<script>
+  /*  TODO * slice(start,end) - strt(包含)，end(不包含)
+      TODO * substr(start,length)
+      TODO * substring(start,stop) - stop是可选值
+   * */
+  var prev = document.getElementById('prev');
+  var next = document.getElementById('next');
+  var img = document.getElementsByTagName('img')[0];
+  var imgsrc = ['photo/1.jpg','photo/2.jpg','photo/3.jpg','photo/4.jpg','photo/5.jpg'];
+  prev.onclick = function hero() {
+    /*获取当前图片的索引值-累加-做边界判断*/
+    var src = img.src
+    console.log(src)//http://localhost:63342/zhoutong/photo/1.jpg
+    var a = src.slice(32,43)
+    var index = imgsrc.indexOf(a)
+    if (index===0){
+      img.src = imgsrc[4]
+    }else{
+      img.src = imgsrc[index-1];
+    }
+  }
+  next.onclick = function hero() {
+    /*获取当前图片的索引值-累加-做边界判断*/
+    var src = img.src
+    //console.log(src)//http://localhost:63342/zhoutong/photo/1.jpg
+    var a = src.slice(32,43)
+    var index = imgsrc.indexOf(a)
+    if (index===4){
+      img.src = imgsrc[0]
+    }else{
+      img.src = imgsrc[index+1];
+    }
+  }
+
+</script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Promise</title>
+  <link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    html,body{
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<button class="btn btn-success" >Button1</button>
+<button class="btn btn-success" >Button2</button>
+<button class="btn btn-success" >Button3</button>
+</body>
+<script src="Bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="./Bootstrap/js/bootstrap.js"></script>
+<script type="text/javascript">
+  /*let btn1 = document.getElementsByClassName('btn')[0];
+  let btn2 = document.getElementsByClassName('btn')[1];
+  let btn3 = document.getElementsByClassName('btn')[2];
+  let obj = {
+    username : 'zt',
+    sayMe : () => {
+      btn1.onclick = () => {
+        console.log(this);//window
+      }
+    }
+  };
+  obj.sayMe();
+
+  let obj1 = {
+    username : 'zt',
+    sayMe : () => {
+      btn2.onclick = function(){
+        console.log(this);//btn2
+      }
+    }
+  };
+  obj1.sayMe();
+
+  let obj2 = {
+    username : 'zt',
+    sayMe : function () {
+      btn3.onclick = () => {
+        console.log(this);//obj2
+      }
+    }
+  };
+  obj2.sayMe();*/
+
+
+  let promise = new Promise((resolve,reject)=>{
+    console.log('111')
+    //初始化promise的状态为pending，执行异步操作(发送请求)
+    setTimeout(function () {
+      console.log('333');
+      //根据异步任务的状态来确定promise对象的状态
+      //执行异步任务成功---修改promise的状态为成功状态--- resolve
+      resolve('b');//修改promise的状态为成功状态--- resolve
+
+      //执行异步任务失败---reject
+      //reject('a');
+    },1000)
+  })
+  console.log('222');
+  promise.then((b)=>{
+    //成功的回调
+    console.log(b)
+  },(a)=>{
+    //失败的回调
+    console.log(a)
+  })
+</script>
+</html>

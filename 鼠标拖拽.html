@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style>
+  body {
+    padding: 50px;
+  }
+  div {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+  }
+  #d1 {
+    background-color: lightskyblue;
+  }
+  #d2 {
+    left: 300px;
+    top: 200px;
+    background-color: lightgreen;
+  }
+</style>
+<body>
+  <p>我是一段文本内容.</p>
+  <div id="d1"></div>
+  <div id="d2"></div>
+</body>
+<script>
+  var d1 = document.getElementById('d1');
+  var a = false;
+  var offsetY,offsetX;
+  d1.addEventListener('mousedown',function (event) {
+     a = true;
+     offsetY = event.offsetY;
+     offsetX = event.offsetX;
+  })
+  d1.addEventListener('mousemove',function (event) {
+    if(a){
+      d1.style.left = event.pageX - offsetX + 'px';
+      d1.style.top = event.pageY - offsetY + 'px';
+    }
+  })
+  d1.addEventListener('mouseup',function () {
+    a = false;
+  })
+
+
+
+  /* TODO  *获取鼠标的坐标值
+     TODO    * x和y - 结果等同于clientX和clientY
+     TODO    * pageX和pageY - 鼠标相对于当前页面的坐标值
+     TODO    * offsetX和offsetY - 鼠标相当于指定元素的坐标值
+     TODO    * clientX和clientY - 鼠标相当于当前窗口的坐标值
+     TODO    * screenX和screenY - 鼠标相当于当前屏幕的坐标值
+
+
+     TODO  *键盘事件
+     TODO    * keydown - 表示键盘被按下
+     TODO    * keyup - 表示键盘被释放
+     TODO    * keypress - 表示键盘被按一下
+     TODO  *事件对象event
+     TODO    * (建议)keyCode属性 - 获取当前的按键
+     TODO    * which属性 - 获取当前的按键
+     TODO    * 以上属性不支持IE 8浏览器
+
+
+     TODO  *专门用于禁用浏览器默认右键菜单
+     TODO    * body.oncontextmenu = function(event){
+     TODO    *      event.preventDefault()
+     TODO    * }
+
+
+     TODO  *定时器
+     TODO    * setTimeout(code,millisec) - 设置定时器(按照设置的时间，向后延迟执行指定逻辑代码)
+     TODO      * code - 设置延迟执行的指定逻辑代码
+     TODO      * millisec - 设置定时器的时间，单位为毫秒
+     TODO    * clearTimeout(id_of_setTimeout) - 清除定时器
+     TODO      * id_of_setTimeout - 指定清除的定时器标识
+     TODO    * setInterval(code,millisec) - 设置定时器(按照设置的时间，周期性执行指定逻辑代码)
+     TODO      * code - 设置延迟执行的指定逻辑代码
+     TODO      * millisec - 设置定时器的时间，单位为毫秒
+     TODO    * cleartInterval(id_of_setInterval) - 清除定时器
+     TODO      * id_of_Interval - 指定清除的定时器标识
+   * */
+
+</script>
+</html>

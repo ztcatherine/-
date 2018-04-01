@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no"/>
+  <title></title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  html,body{
+    height: 100%;
+    overflow: hidden;
+  }
+  #wrap{
+    height: 100%;
+  }
+
+
+</style>
+<body>
+  <div id="wrap">
+
+  </div>
+</body>
+<script type="text/javascript">
+  document.addEventListener('touchstart',function (event) {
+    event.preventDefault()
+  });
+  (function () {
+    var width = document.documentElement.clientWidth/16;
+    var styleN = document.createElement('style');
+    styleN.innerHTML = 'html{font-size: '+ width +'px !important;}';
+    document.head.appendChild(styleN);
+  })();
+</script>
+</html>

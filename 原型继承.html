@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+</body>
+<script>
+  function A() {};
+  A.prototype.name = 'a';
+  A.prototype.color = 'blue';
+  function B() {};
+  B.prototype = A.prototype
+  B.prototype.age = 18;
+  var Obj = new B();
+  console.log(Obj.color)
+
+</script>
+</html>

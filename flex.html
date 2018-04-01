@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .wrapper{
+    display: flex;
+    width: 400px;
+    height: 300px;
+    flex-wrap: wrap;
+    /*justify-content: space-around;*/
+    /*justify-content: space-between;*/
+    /*justify-content沿着伸缩容器主轴对齐伸缩项目*/
+    /*align-content: space-between;*/
+    /*align-content沿着伸缩容器侧轴对齐伸缩项目*/
+   /* flex-direction:row-reverse;*/
+    /*flex-direction设置主轴侧轴的方向，默认值row
+      flex-direction:row-reverse主轴方向相反，不影响侧轴方向
+      flex-direction:column 主轴变侧轴 侧轴变主轴
+      flex-direction:column-reverse主轴变侧轴 侧轴变主轴,主轴方向相反*/
+  }
+  .box{
+    width: 400px;
+    }
+  .box1{  background-color: red;}
+  .box2{  background-color: blue;}
+  .box3{  background-color: greenyellow;}
+</style>
+<body>
+<!-- <div>hello</div>-->
+<div class="wrapper">
+  <div class="box box1">1</div>
+  <div class="box box2">2</div>
+  <div class="box box3">3</div>
+</div>
+</body>
+<script type="text/javascript"></script>
+</html>

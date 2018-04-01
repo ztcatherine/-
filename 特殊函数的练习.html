@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+</body>
+<script>
+  var a = 'a';
+  console.log(a);//a
+  var a = function (a) {
+    console.log(a);// function (a) {return a;}
+    return a('b');
+  }
+  var a = a(function (a) {return a;})
+  console.log(a);// b
+
+
+</script>
+</html>

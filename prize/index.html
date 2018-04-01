@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no"/>
+  <title></title>
+  <link rel="stylesheet" href="../Bootstrap/css/bootstrap.min.css">
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body{
+      height: 100%;
+      width: 100%;
+    }
+    body{
+      background: url("img/bg-img.png") no-repeat;
+      background-size: 100% auto;
+      overflow: hidden;
+    }
+    .play{
+      margin-top: 25px;
+      height: 25px;
+      line-height: 25px;
+      background-color: #FFEAB2;
+      display: flex;
+    }
+    .play #icon{
+      width: 40px;
+      height: 25px;
+      background: url("img/icon-laba.png") no-repeat center;
+      background-size: 50% auto;
+      border-right: 1px solid red;
+    }
+    #mesg{
+      width:335px;
+      display: flex;
+      white-space: nowrap;
+    }
+    #mesg .mesgIterms{
+      margin: 0 10px;
+      font-size: 10px;
+    }
+    #content{
+      width: 100%;
+      height: 220px;
+      margin-top: 130px;
+      padding: 0 50px;
+    }
+    #content table{
+      width: 100%;
+      height: 100%;
+    }
+    tbody{
+      width: 100%;
+      border-spacing: 5px 5px;
+    }
+    tr{
+      width: 100%;
+    }
+    tbody img{
+      width: 50%;
+    }
+    .luck{
+      width:33.33%;
+      height: 33.33%;
+      background: url("img/proBj.png") no-repeat center;
+      background-size: 95% 95%;
+      border-radius: 10px;
+    }
+    .sm{
+       width: 40%;
+    }
+    .lg{
+      width: 60%;
+    }
+    .active{
+      background: url("img/active.png") no-repeat ;
+      background-size: 100% 100%;
+    }
+    #btn{
+      width:33.33%;
+      height: 33.33%;
+      background: url("img/cjBtn.png") no-repeat;
+      background-size: 100% 100%;
+    }
+    .rule{
+      color: white;
+      height: 140px;
+      width: 260px;
+      background-color:#E84A54;
+      margin: 5px auto;
+      font-size: 9px;
+      padding: 10px;
+      font-weight: bold;
+    }
+    .ruleH{
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<div class="play">
+  <span id="icon"></span>
+  <div id="mesg">
+    <div class="mesgIterms">某某某获得一等奖</div>
+    <div class="mesgIterms">某某某获得二等奖</div>
+    <div class="mesgIterms">某某某获得三等奖</div>
+  </div>
+</div>
+<div id="content">
+  <table>
+    <tbody>
+    <tr>
+      <td class="active luck0 luck ">
+        <img src="img/01.png" class="img-responsive center-block ">
+      </td>
+      <td class="luck luck1">
+        <img src="img/02.png" class="img-responsive center-block sm">
+      </td>
+      <td class="luck luck2">
+        <img src="img/03.png" class="img-responsive center-block">
+      </td>
+    </tr>
+    <tr>
+      <td class="luck luck3">
+        <img src="img/05.png" class="img-responsive center-block lg">
+      </td>
+      <td id="btn" class="cjbtn"></td>
+      <td class="luck luck4">
+        <img src="img/01.png" class="img-responsive center-block">
+      </td>
+    </tr>
+    <tr>
+      <td class="luck luck5">
+        <img src="img/02.png" class="img-responsive center-block sm">
+      </td>
+      <td class="luck luck6">
+        <img src="img/04.png" class="img-responsive center-block sm">
+      </td>
+      <td class="luck luck7">
+        <img src="img/03.png" class="img-responsive center-block">
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div class="rule">
+  <p class="ruleH">抽奖活动规则</p>
+  <p>1、单次加油满200元,可抽奖一次;</p>
+  <p>2、各种奖券使用规则详见该奖券的使用说明;</p>
+  <p>3、奖券请在有效期内使用或者分享给其他朋友,过期无效</p>
+</div>
+
+<script src="../Bootstrap/js/jquery-3.1.1.min.js"></script>
+<script src="../Bootstrap/js/bootstrap.min.js"></script>
+</body>
+<script type="text/javascript">
+  var btn = document.getElementById('btn');
+  var tds = document.getElementsByClassName('luck');
+  var arry = [];   /*["luck0", "luck1", "luck2", "luck3", "luck4", "luck5", "luck6", "luck7"]*/
+  for(var i =0;i < 8;i++){
+    var lucks = tds[i].classList[1];
+    var td = tds[i]
+    arry.push(td)
+  }
+  var a = $([arry])[0]
+  $(btn).click(function () {
+   setInterval()
+  })
+
+</script>
+</html>

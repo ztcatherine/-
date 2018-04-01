@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+<body>
+
+</body>
+<script>
+  var arr = [1,2,3,4,5,6,2,3,4];
+  function quchong(arr) {
+    var n = [];
+    for (var i=0;i<arr.length;i++){
+      if (n.indexOf(arr[i]) === -1){
+        n.push(arr[i]);
+      }
+    }
+    console.log(n);
+    return n
+  }
+  quchong(arr)
+  console.log(arr);
+
+  // TODO 不在全局作用域显示的方法 - 自调
+/*  (function () {
+    return{
+      quchong :  function quchong(arr) {
+        var n = [];
+        for (var i=0;i<arr.length;i++){
+          if (n.indexOf(arr[i]) === -1){
+            n.push(arr[i]);
+          }
+        }
+        return n;
+      }
+    }
+  })()
+  console.log(arr);
+  console.log(n);*/
+</script>
+</html>
