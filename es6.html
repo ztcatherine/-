@@ -56,6 +56,36 @@
   obj2.sayMe();*/
 
 
+/*  class Person{
+    //类的构造方法
+    constructor(name,age){
+        this.name=name;
+        this.age=age;
+    }
+    //类的一般方法
+    showMsg(){
+      console.log(this.name,this.age)
+    }
+  }
+  let person1 = new Person('zt',26);
+  let person2 = new Person('cxw',27);
+  console.log(person1,person2);
+  person1.showMsg();
+  person2.showMsg();
+
+  //定义一个子类继承Person
+  class StarPerson extends Person{
+    //定义类的构造方法
+    constructor(name,age,sex){
+      super(name,age)//调用父类的构造方法
+      this.sex = sex;
+    }
+  }
+  let p1 = new StarPerson('zy',20,'女');
+  console.log(p1);
+  p1.showMsg();*/
+
+
   let promise = new Promise((resolve,reject)=>{
     console.log('111')
     //初始化promise的状态为pending，执行异步操作(发送请求)
@@ -78,6 +108,7 @@
     console.log(a)
   })
 
-  console.log('444')
+  console.log('444');
+
 </script>
 </html>

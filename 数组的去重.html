@@ -8,8 +8,8 @@
 
 </body>
 <script>
-  var arr = [1,2,3,4,5,6,2,3,4];
-  function quchong(arr) {
+  /* var arr = [1,2,3,4,5,6,2,3,4];
+   function quchong(arr) {
     var n = [];
     for (var i=0;i<arr.length;i++){
       if (n.indexOf(arr[i]) === -1){
@@ -20,7 +20,18 @@
     return n
   }
   quchong(arr)
+  console.log(arr);*/
+
+ //es6去重
+  let arr = [1,2,3,4,5,6,2,3,4];
+  let arr1 = arr;
+  arr = [];
+  let set = new Set(arr);
+  set.forEach(function (item) {
+    arr.push(item)
+  })
   console.log(arr);
+
 
   // TODO 不在全局作用域显示的方法 - 自调
 /*  (function () {
