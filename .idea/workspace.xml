@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35719a96-6a31-4a1b-a96d-c72aac3eeef3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/es6.html" afterPath="$PROJECT_DIR$/es6.html" />
-    </list>
+    <list default="true" id="35719a96-6a31-4a1b-a96d-c72aac3eeef3" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -41,7 +38,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="数组的去重.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="数组的去重.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/数组的去重.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="292">
@@ -91,7 +88,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="es6.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="es6.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/es6.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="437">
@@ -455,12 +452,12 @@
       <workItem from="1521961328500" duration="736000" />
       <workItem from="1521982052881" duration="1076000" />
       <workItem from="1522579458353" duration="7771000" />
-      <workItem from="1522635186130" duration="21554000" />
+      <workItem from="1522635186130" duration="22741000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="622754000" />
+    <option name="totallyTimeSpent" value="623941000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -819,18 +816,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/数组的去重.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/es6.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="111" column="21" lean-forward="true" selection-start-line="111" selection-start-column="21" selection-end-line="111" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/数组的去重.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding />
         </state>
       </provider>
