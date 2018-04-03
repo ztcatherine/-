@@ -67,11 +67,12 @@
       console.log(this.name,this.age)
     }
   }
+
   let person1 = new Person('zt',26);
   let person2 = new Person('cxw',27);
-  console.log(person1,person2);
+  console.log(person1);
   person1.showMsg();
-  person2.showMsg();
+  //person2.showMsg();
 
   //定义一个子类继承Person
   class StarPerson extends Person{
@@ -86,7 +87,7 @@
   p1.showMsg();*/
 
 
-  let promise = new Promise((resolve,reject)=>{
+ let promise = new Promise((resolve,reject)=>{
     console.log('111')
     //初始化promise的状态为pending，执行异步操作(发送请求)
     setTimeout(function () {
