@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,body{
+      height: 100%;
+      width: 100%;
+    }
+
+  </style>
+</head>
+<body>
+<div id="app">
+  <input type="text" v-model="inputTodo" @keyup.enter="addTodo">
+  <ul>
+    <li v-for="(todo,index) in todos">
+      {{todo.name}}
+      <button @click="deleteTodo(index)">X</button>
+    </li>
+  </ul>
+</div>
+
+</body>
+<script src="./vue.js"></script>
+<script type="text/javascript">
+  new Vue({
+    el:'#app',
+    data:{
+      inputTodo:'',
+      todos:[
+        {id:1,name:'AAA'},
+        {id:2,name:'BBB'},
+        {id:3,name:'CCC'},
+      ]
+    },
+    methods:{
+      addTodo(event){
+        const todo ={
+          id:Date.now(),
+          name:this.inputTodo
+        }
+        this.todos.unshift(todo)
+        this.inputTodo =''
+      },
+      deleteTodo(index){
+        this.todos.splice(index,1)
+      }
+    }
+  })
+</script>
+</html>
